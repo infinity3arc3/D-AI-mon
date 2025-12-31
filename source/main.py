@@ -8,23 +8,52 @@
 
 
 # essential classes
-class player():
-    def __init__(self):
-        pass
+# class player():
+#    def __init__(self):
+#        pass
 
 class monster():
-    def __init__(self):
+    # default monster with all stats based off of the spreadsheet provided by RufflesDMAccount on reddit:
+    # https://www.reddit.com/r/UnearthedArcana/comments/8zvr6s/the_great_dd5e_monster_spreadsheet/
+    def __init__(self, id):
+        self.id = id
+        self.name = "Default_Test"
+        self.size =  "Medium"
+        self.type = "Humanoid"
+        self.alignment = "U"
+        self.armor_class = 5
+        self.total_hit_points = 15
+        self.speed_generic = 30
+        self.strength = 10
+        self.dexterity = 10
+        self.constitution = 10
+        self.intelligence = 10
+        self.wisdom = 10
+        self.charisma = 10
+        self.saving_throws = []
+        self.skills = []
+        self.weaknesses = "None"
+        self.resistances = "None"
+        self.immunities = "None"
+        self.senses = "Normal"
+        self.languages = "Common"
+        self.additional_perks = "None"
+        self.source = "Monster Manual"
+        self.author = "Wizards of the Coast"
+
+    def importMonster(self):
         pass
 
-class npc_friend():
-    def __init__(self):
-        pass
+#Friendly npc is a child of parent class monster, as they will use the same stats
+class npc_friend(monster):
+    def __init__(self, id, nickname):
+        super().__init__(id)
+        self.nickname = nickname
 
 # main method
 def main():
     # initialize variables
     encounter = True
-
 
     # import character sheets into a list of player objects
 
